@@ -28,7 +28,7 @@ p {
 	font-size: 1.2em;
 	font-weight: 300;
 	line-height: 1.25em;
-	padding: 10px 0;
+
 }
 
 /* NavBar */
@@ -51,6 +51,7 @@ nav a {
 	color: #EAD0FB;
 	text-decoration: none;
 	text-transform: uppercase; 
+	padding: 2px 5px;
 }
 
 nav li:hover {
@@ -67,11 +68,73 @@ nav ul {
 }
 
 nav li {
-	margin: 5px 0;
+	margin: 5px 1px;
 	padding: 2px 5px;
 	border-right: 1px solid #320B22;
+	line-height: 1.2em;
 }
 
+nav a.currentPage {
+	background-color: #EAD0FB;
+	color: #320B22;
+}
+
+/* Footer */
+
+.bottom-nav {
+	/*flex-direction: column;
+	justify-content: center;
+	align-items: center;*/
+	display: block;
+	margin: auto;
+}
+
+.bottom-nav p {
+	color: #EAD0FB;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.bottom-nav ul {
+	display: grid;
+	margin: 0 40%;
+	width: 20%;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+}
+
+.bottom-nav li {
+	padding: 10px 10px;
+	border: 1px solid #320B22;
+	margin: auto;
+}
+
+.bottom-nav li:hover {
+	border: 1px solid #EAD0FB;
+}
+
+#github, #email {
+	grid-column: 1 / span 1;
+}
+
+#linked, #facebook {
+	grid-column: 2 / span 1;
+}
+
+#facebook {
+	
+}
+
+
+/* Danish Living Page */
+
+#hygge, #biking, #trips {
+	background-color: #FFFFFF;
+}
+
+#danish-culture img {
+	display: none;
+}
 
 
 /* Main Content */
@@ -182,6 +245,31 @@ nav li {
 		grid-column: 1 / 3;
 		grid-row: 7 / 8;
 	}
+	
+	.bottom-nav ul {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	#github, #email, #linked, #facebook {
+		grid-column: auto;
+	}
+
+
+	/* Danish Living */
+	#danish-culture img {
+		display: block;
+		max-height: 450px;
+		width: auto;
+		padding: 10px;
+	}
+
+	#hygge, #biking {
+		text-align: left;
+	}
+
+	#trust, #trips {
+		text-align: right;
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -244,9 +332,61 @@ nav li {
 		grid-column: 3 / 4;
 		grid-row: 6 / 8;
 	}
+	
+	.large-div {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1;
+	}
+	
+	#hygge div.large-div p {
+		grid-column: 1 / span 2;
+		grid-row: 1 / span 1;
+		padding: 20px 0; 
+	}
+
+	#hygge div.large-div img {
+		grid-column: 3 / span 1;
+		grid-row: 1 / span 1;
+	}
+
+	#biking div.large-div p {
+		grid-column: 1 / span 2;
+		grid-row: 1 / span 1;
+		padding: 20px 0;
+	}
+
+	#biking div.large-div img {
+		grid-column: 3 / span 1;
+		grid-row: 1 / span 1;
+		width: 100%;
+		height: auto;
+	}
+
+	#trust div.large-div p {
+		grid-column: 2 / span 2;
+		grid-row: 1 / span 1;
+		padding: 20px 0; 
+	}
+
+	#trust div.large-div img {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+	}
+
+	#trips div.large-div p {
+		grid-column: 2 / span 2;
+		grid-row: 1 / span 1;
+		padding: 20px 0; 
+	}
+
+	#trips div.large-div img {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+	}
 
 
-}
+}	
 
 
 
