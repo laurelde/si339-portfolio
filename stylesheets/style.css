@@ -1,3 +1,11 @@
+/* Colors: */
+
+/*
+light purple: #EAD0FB;
+dark purple: #320B22;
+*/
+
+
 /* Body */
 
 body {
@@ -31,20 +39,36 @@ p {
 
 }
 
+a.skip {
+	color: #EAD0FB;
+	position: absolute;
+	top: 0;
+	padding: 5px;
+	left: -500px;
+	-webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+}
+
+a.skip:focus{
+	left: 0;
+}
+
 /* NavBar */
 
 nav {
 	background-color: #320B22;
 	padding: 20px 5%;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
-	align-items: flex-end;
+	align-items: center;
 }
 
 nav h1 {
 	font-size: 2.4em;
 	padding: 0;
-	text-align: left;
+	text-align: center;
 }
 
 nav a {
@@ -54,23 +78,26 @@ nav a {
 	padding: 2px 5px;
 }
 
-nav li:hover {
+
+nav ul li:hover {
 	color: #EAD0FB;
-	border-right: 1px solid #EAD0FB;
+	font-weight: bold;
+	border-right: none;
+	border-bottom: 1px solid #EAD0FB;;
 }
 
 
 nav ul {
 	display: flex;
 	flex-direction: column; 
-	align-items: flex-end;
-	text-align: right;
+	align-items: center;
+	text-align: center;
 }
 
 nav li {
 	margin: 5px 1px;
-	padding: 2px 5px;
-	border-right: 1px solid #320B22;
+	padding: 4px 5px;
+	border-bottom: 1px solid #320B22;
 	line-height: 1.2em;
 }
 
@@ -182,9 +209,39 @@ nav a.currentPage {
 
 
 
+#gallery img:active {
+	position: fixed;
+	left: 20%;
+	right: 20%;
+	width: 60%;
+	top: 25px;
+	height: auto;
+}
+
+
 
 
 @media screen and (min-width: 680px) {
+	
+	nav {
+		flex-direction: row;
+	}
+
+	nav ul {
+		align-items: flex-end;
+		text-align: right;
+	}
+	
+	nav ul li {
+		border-bottom: none;
+		border-right: 1px solid #320B22;
+	}
+
+	nav ul li:hover {
+		border-bottom: none;
+		border-right: 1px solid #EAD0FB;
+	}
+
 	#gallery {
 		display: grid;
 		grid-template-columns: 1fr 1fr; 
@@ -273,6 +330,27 @@ nav a.currentPage {
 }
 
 @media screen and (min-width: 1024px) {
+	
+	nav ul {
+		flex-direction: row;
+		align-items: flex-end;
+		text-align: right;
+		justify-content: flex-end;
+		padding: 0 7px;
+	}
+
+	nav ul li {
+		border-bottom: 1px solid #320B22;
+		border-right: none;
+	}
+
+	nav ul li:hover {
+		border-right: none;
+		border-bottom: 1px solid #EAD0FB;;
+	}
+
+
+
 	#gallery {
 		grid-template-columns: 1fr 1fr 1fr; 
 		grid-template-rows: repeat(7, 400px);
