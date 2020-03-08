@@ -22,9 +22,13 @@ img {
 
 h1 {
 	font-size: 2.75em; 
-	padding: 40px 5%; 
-	margin: 10px 0;
+	padding: 40px; 
+	margin: auto;
 	text-align: center;
+	-webkit-animation-name: headerAnimation;
+	        animation-name: headerAnimation;
+	-webkit-animation-duration: 3s;
+	        animation-duration: 3s;
 }
 
 h2 {
@@ -59,10 +63,15 @@ a.skip:focus{
 nav {
 	background-color: #320B22;
 	padding: 20px 5%;
+	display: -webkit-box;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
+	-webkit-box-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	        align-items: center;
 }
 
 nav h1 {
@@ -88,9 +97,13 @@ nav ul li:hover {
 
 
 nav ul {
+	display: -webkit-box;
 	display: flex;
-	flex-direction: column; 
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column; 
+	-webkit-box-align: center; 
+	        align-items: center;
 	text-align: center;
 }
 
@@ -104,6 +117,47 @@ nav li {
 nav a.currentPage {
 	background-color: #EAD0FB;
 	color: #320B22;
+}
+
+@-webkit-keyframes headerAnimation {
+	from {
+		color: #EAD0FB;
+		font-weight: normal;
+	}
+	to {
+		font-weight: bold;
+		color: #320B22;
+	}
+}
+
+@keyframes headerAnimation {
+	0% {
+		color: #E9C8FF;
+		font-weight: normal;
+	}
+	25% {
+		font-weight: medium;
+		color: #9F8AAF;
+	}
+	50% {
+		font-weight: medium;
+		color: #63566C;
+	}
+	75% {
+		font-weight: bold;
+		color: #2E2831;
+	}
+	100% {
+		font-weight: bold;
+		color: #000000
+	}
+}
+
+@media (prefers-reduced-motion: reduce){
+	h1 {
+		-webkit-animation-name: none;
+		        animation-name: none;
+	}
 }
 
 /* Footer */
@@ -123,9 +177,10 @@ nav a.currentPage {
 }
 
 .bottom-nav ul {
+	display: -ms-grid;
 	display: grid;
 	margin: 0 40%;
-	width: 20%;
+	width: 20%r;
 	grid-template-columns: 1fr 1fr;
 	text-align: center;
 }
@@ -140,11 +195,11 @@ nav a.currentPage {
 	border: 1px solid #EAD0FB;
 }
 
-#github, #email {
+#github, #email 
 	grid-column: 1 / span 1;
 }
 
-#linked, #facebook {
+#linked, #facebook 
 	grid-column: 2 / span 1;
 }
 
@@ -180,7 +235,8 @@ nav a.currentPage {
 	margin: auto;
 	width: 90%;
 	height: 250px;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 
 #decision, #looking-back {
@@ -192,11 +248,30 @@ nav a.currentPage {
 	text-align: right;
 }
 
+/* Weekend Trips Page */
+
+#day-trips p {
+	margin: 0 40px 10px 40px;
+}
+
+#day-trips img {
+	max-width: 800px;
+	height: auto;
+}
+
+.trip {
+	padding: 40px 0;
+}
+
+.trip:nth-of-type(even) {
+	background-color: #FFFFFF;
+}
+
 /* Gallery Page */
 
 #gallery {
-	display: grid;
-	grid-template-columns: 1fr;
+	display: -ms-grid;
+	display: gridgrid-template-columns: 1fr;
 	width: 90%;
 	margin: auto;
 	grid-gap: 5px;
@@ -205,7 +280,8 @@ nav a.currentPage {
 #gallery img {
 	width: 100%;
 	height: auto;
-	filter: grayscale(50%);
+	-webkit-filter: grayscale(50%);
+	        filter: grayscale(50%);
 }
 
 #gallery img:active {
@@ -217,7 +293,8 @@ nav a.currentPage {
 	height: auto;
 	max-height: 700px;
 	border: 2px solid white;
-	filter: grayscale(0%);
+	-webkit-filter: grayscale(0%);
+	        filter: grayscale(0%);
 	z-index: 3;
 }
 
@@ -227,15 +304,35 @@ nav a.currentPage {
 	margin-bottom: 10px;
 }
 
+#highlights-page h2 {
+	margin-top: 40px;
+	text-align: center;
+	font-weight: bold;
+}
+
+iframe {
+	display: block;
+	margin: 40px auto;
+	max-width: 600px;
+}
+
 
 @media screen and (min-width: 680px) {
 	
+	nav h1 {
+		text-align: left;
+		margin: 10px;
+	}
+
 	nav {
-		flex-direction: row;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		        flex-direction: row;
 	}
 
 	nav ul {
-		align-items: flex-end;
+		-webkit-box-align: end;
+		        align-items: flex-end;
 		text-align: right;
 	}
 	
@@ -250,67 +347,89 @@ nav a.currentPage {
 	}
 
 	#gallery {
-		display: grid;
+		display: -ms-grid;
+		display: grid;r;
 		grid-template-columns: 1fr 1fr; 
 	}
 	
 	#gallery img {
 		height: 400px;
-		object-fit: cover;
+		-o-object-fit: cover;
+		   object-fit: cover;
 		margin: 0;
 	}
 
 	#paragliding {
 		grid-column: 1 / 3;
+		-ms-grid-row: 1;
+		-ms-grid-row-span: 1;
 		grid-row: 1 / 2;
 	}
 
 	#fjords {
 		grid-column: 1 / 2;
+		-ms-grid-row: 2;
+		-ms-grid-row-span: 1;
 		grid-row: 2 / 3;
 	}
 
 	#waterfall {
 		grid-column: 2 / 3;
+		-ms-grid-row: 2;
+		-ms-grid-row-span: 1;
 		grid-row: 2 / 3;
 	}
 
 	#parliament {
 		grid-column: 1 / 3;
+		-ms-grid-row: 3;
+		-ms-grid-row-span: 1;
 		grid-row: 3 / 4;
 	}
 
 	#interlaken {
 		grid-column: 1 / 2;
+		-ms-grid-row: 4;
+		-ms-grid-row-span: 1;
 		grid-row: 4 / 5;
 	}
 
 	#snow {
 		grid-column: 2 / 3;
+		-ms-grid-row: 4;
+		-ms-grid-row-span: 1;
 		grid-row: 4 / 5;
 	}
 
 	#canal {
 		grid-column: 1 / 3;
+		-ms-grid-row: 5;
+		-ms-grid-row-span: 1;
 		grid-row: 5 / 6;
 	}
 
 	#budaview {
 		grid-column: 1 / 2;
+		-ms-grid-row: 6;
+		-ms-grid-row-span: 1;
 		grid-row: 6 / 7;
 	}
 
 	#tulips {
 		grid-column: 2 / 3;
+		-ms-grid-row: 6;
+		-ms-grid-row-span: 1;
 		grid-row: 6 / 7;
 	}
 
 	#soundOfMusic {
 		grid-column: 1 / 3;
+		-ms-grid-row: 7;
+		-ms-grid-row-span: 1;
 		grid-row: 7 / 8;
 	}
 	
-	.bottom-nav ul {
+	.bottom-nav ul {r 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 
@@ -327,13 +446,7 @@ nav a.currentPage {
 		padding: 10px;
 	}
 
-	#hygge, #biking {
-		text-align: left;
-	}
 
-	#trust, #trips {
-		text-align: right;
-	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -423,6 +536,14 @@ nav a.currentPage {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1;
 	}
+
+	#hygge, #biking {
+		text-align: left;
+	}
+
+	#trust, #trips {
+		text-align: right;
+	}
 	
 	#hygge div.large-div p {
 		grid-column: 1 / span 2;
@@ -469,8 +590,6 @@ nav a.currentPage {
 		grid-column: 1 / span 1;
 		grid-row: 1 / span 1;
 	}
-
-
 }	
 
 
