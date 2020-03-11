@@ -567,6 +567,8 @@ iframe {
 
 
 
+
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -653,10 +655,15 @@ iframe {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1;
+		min-height: 400px;
 	}
 
 	#hygge, #biking {
 		text-align: left;
+	}
+
+	#biking img{
+		max-height: 200px;
 	}
 
 	#trust, #trips {
