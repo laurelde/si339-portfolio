@@ -12,7 +12,7 @@
 	</script>
 
 	<meta charset="UTF-8">
-	<title>Highlights</title>
+	<title>Contact Form</title>
 	<link rel="stylesheet" type="text/css" href="stylesheets/html5reset.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 
@@ -21,35 +21,53 @@
     <script src="https://kit.fontawesome.com/70674042c3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<a class = "skip" href="#highlights-page">Skip to Main Content</a>
+	<a class = "skip" href="#landing-page">Skip to Main Content</a>
 <header>
 	<nav>
 		<h1><a href="index.html">Semester in Denmark</a></h1>
 		<ul>
 			<li><a href="danish-living.html">Danish Living</a></li>
 			<li><a href="weekend-trips.html">Weekend Trips</a></li>
-			<li><a href="highlights.html" class="currentPage">Highlights</a></li>
+			<li><a href="highlights.html">Highlights</a></li>
 			<li><a href="contact.html">Contact</a></li>
 		</ul>
 	</nav>
 </header>
-<main id="highlights-page">
-	<h1> Highlights </h1>
-	<p>Click and hold images to get an up-close, color version!<p>
-	<div id="gallery">
-		<img src="photos/highlights/paragliding.jpeg" alt="Paragliding in Interlaken" id="paragliding">
-		<img src="photos/highlights/fjords.jpeg" alt="Norwegian Fjords" id="fjords">
-		<img src="photos/highlights/waterfall.jpeg" alt="Waterfall in Bergen" id="waterfall">
-		<img src="photos/highlights/interlaken.jpg" alt="Interlaken Switzerland" id="interlaken">
-		<img src="photos/highlights/parliament.jpeg" alt="Hungarian Parliament" id="parliament">
-		<img src="photos/highlights/budaView.jpeg" alt="View of Budapest" id="budaview">
-		<img src="photos/highlights/snow.jpeg" alt="Sound of Music opening scene" id="snow">
-		<img src="photos/highlights/canal.jpeg" alt="Kayaking in Canals" id="canal">
-		<img src="photos/highlights/soundOfMusic.jpg" alt="Remaking the Sound of Music" id="soundOfMusic">
-		<img src="photos/highlights/tulips.jpg" alt="Tulip fields in the Netherlands" id="tulips">
-	</div>
-	<h2>Highlight reel of the semester</h2>
-	<iframe title="highlights-video" width="560" height="315" src="https://www.youtube.com/embed/_vID5zzeS0U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<main id='contact-form'>
+	<h1>Contact Me</h1>
+	<p>Feel free to reach out if you would like specific recommendations or have questions! I love talking about my study abroad experience and helping other people have a great time as well.</p>
+	<form action="https://formspree.io/xvoadgqj" method="POST" id="contact">
+		
+		<legend></legend>
+			<div>
+				<h3>Personal Information</h3>
+				<label for ="firstName">First Name:</label>
+					<input type="text" id="firstName" name="firstName">
+				<label for ="lastName">Last Name:</label>
+					<input type="text" id="lastName" name="lastName">
+				<br>
+				<label for ="email">Email:</label>
+					<input type="text" id="email" name="email">
+			</div>
+			<div>
+				<h3>Reason for Contacting</h3>
+			    <input type="radio" name="reason" id="considering" value="considering"/><label for="considering">Considering applying to study abroad</label><br>
+			    <input type="radio" name="reason" id="accepted" value="accepted"/><label for="accepted">Already accepted into program</label><br>
+			    <input type="radio" name="reason" id="abroad" value="abroad"/><label for="abroad">Currently abroad</label><br>
+			    <input type="radio" name="reason" id="concerned" value="concerned"/><label for="concerned">Concerned Parent</label><br>
+			    <input type="radio" name="reason" id="other" value="other"/><label for="other">Other</label>
+
+			</div>
+			<div>
+				<label for ="message"><h3>Message</h3></label>
+					<textarea name="message" id="message" cols="30" rows="10"></textarea>
+			</div>
+			<div>
+		      <input type="submit" value=" Submit"/>
+		   </div>
+
+	</form>
+	
 </main>
 <footer>
 	<nav class="bottom-nav" title="bottom-navigation">
