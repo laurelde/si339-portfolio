@@ -389,7 +389,7 @@ input {
 	border-radius: 5px;
 }
 
-form h3 {
+form h2 {
 	margin: 0 0 30px 0;
 	font-size: 1.75em;
 }
@@ -400,7 +400,7 @@ input[type=radio] {
 }
 
 textarea {
-  width: 98%;
+  width: 97%;
   height: 150px;
   padding: 1.5%;
 /*  box-sizing: border-box;*/
@@ -410,6 +410,10 @@ textarea {
 
 input[type=text] {
 	margin: 20px 0;
+}
+
+input[type=submit] {
+	width: 100%;
 }
 
 
