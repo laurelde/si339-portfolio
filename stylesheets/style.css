@@ -361,6 +361,7 @@ iframe {
 	display: block;
 	margin: 40px auto;
 	max-width: 600px;
+	border: none;
 }
 
 #contact-form {
